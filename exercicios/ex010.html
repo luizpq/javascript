@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #ver{
+            color: rgb(149, 10, 10);
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro: <input type="number" name="vel" id="ivel"> km/h
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="ver">Analisando...</div>
+    <script>
+        function verificar() {
+            var vel = document.getElementById('ivel')
+            var v = Number(vel.value)
+            if (v > 80) {
+                ver.innerHTML = `Você andou a ${v}km/h, então você será MULTADO`
+            }
+            else {
+                ver.innerHTML = `Você andou a ${v}km/h, então NÃO será MULTADO`
+            }
+        }
+    </script>
+</body>
+</html>

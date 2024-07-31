@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get" autocomplete="on">
+        <label for="ip">De Qual país você é? </label>
+        <input type="text" name="p" id="ip" required placeholder="Nome do País" autocomplete="country-name">
+        <input type="button" value="Verificar" onclick="pais()">
+    </form>
+    <div id="res">
+
+    </div>
+
+    <script>
+        function pais() {
+            var p = document.getElementById('ip')
+            var p = String(p.value)
+            if(p == 'Brasil' || p == 'brasil') {
+                res.innerHTML += `Você é do ${p}, então é BRASILEIRO`
+            }
+               
+            else {
+                 res.innerHTML += `Você é da(o) ${p}, então NÃO é brasileiro.`
+        }
+    }
+    </script>
+</body>
+</html>
