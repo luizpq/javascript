@@ -4,14 +4,50 @@ function verificar() {
     var anoAtual = agora.getFullYear()
     var nasc = document.getElementById('iano')
     var res = document.getElementById('res')
-    if (nasc.value.lenth == 0 || Number(nasc.value) > anoAtual) {
-        window.alert('ERRO. Preencha os dados corretamente.')
+    if (Number(nasc.value) < 1900 || Number(nasc.value) > anoAtual) {
+        window.alert('[ERRO]. Preencha os dados corretamente.')
     }
     else {
-        var fsex = document.getElementById('isexofem')
-        var idade = ano - Number(nasc.value)
+        var fsex = document.getElementsByName('sexo')
+        var idade = anoAtual - Number(nasc.value)
         var genero = ''
-        if (isexofem[0] = 'Homem')
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        if (fsex[0].checked) {
+            var genero = 'Homem'
+            if (idade >= 0 && idade <= 10) {
+
+            } 
+            else if (idade < 18) {
+
+            }
+            else if (idade < 65) {
+
+            }
+            else {
+
+            }
+        }
+        else {
+            var genero = 'Mulher'
+            if (idade >= 0 && idade <= 10) {
+                img.setAttribute('src', 'foto-bebe-fem.jpg')
+            } 
+            else if (idade < 18) {
+
+            }
+            else if (idade < 65) {
+
+            }
+            else {
+                
+            }
+        }
     }
+    res.style.textAlign = 'center'
+    res.innerHTML = `Detectamos ${genero} de ${idade} anos`
+    res.appendChild(img)
 }
+
+
 
