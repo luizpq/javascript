@@ -48,3 +48,7 @@ input{
     margin-top: 10px;
     margin-right: 5px;
 }
+
+div > p {
+    line-height: 30px;
+}
