@@ -8,20 +8,29 @@ botao.addEventListener('click', () => {
 })
 
 function isnumber(param) {
-    if (num.value > 0 && num.value > 100) {
-        alert('[ERRO]. O número digitado não é válido.')   
+    if (param.value > 0 && param.value <= 100) {
+        return true   
     }
     else {
-        return param
+        return false
     }
 }
 
+function inlist(param) {
+    if (param.value in valores.value) {
+        return true
+    }
+
+    else {
+        return false
+    }
+}
 
  
 function addnumber() {
     let item = document.createElement('option')
  
-    if (isnumber(num.value) && !inlist(num.value)) {
+    if (isnumber(num.value) == true && inlist(num.value) == true) {
         item.text = `Valor ${num.value} adicionado`
         valores.push(num.value)
         list.appendChild(item)
@@ -30,7 +39,5 @@ function addnumber() {
     else {
         alert('[ERRO]. Digite um número válido')
     }
-
-   
-    
+  
 }
