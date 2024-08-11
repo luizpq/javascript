@@ -7,8 +7,8 @@ botao.addEventListener('click', () => {
     addnumber()
 })
 
-function isnumber(param) {
-    if (param.value > 0 && param.value <= 100) {
+function isnumber(n) {
+    if (Number(n) > 0 && Number(n) <= 100) {
         return true   
     }
     else {
@@ -16,8 +16,8 @@ function isnumber(param) {
     }
 }
 
-function inlist(param) {
-    if (param.value in valores.value) {
+function inlist(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
         return true
     }
 
@@ -30,7 +30,7 @@ function inlist(param) {
 function addnumber() {
     let item = document.createElement('option')
  
-    if (isnumber(num.value) == true && inlist(num.value) == true) {
+    if (isnumber(num.value) && !inlist(num.value, valores)) {
         item.text = `Valor ${num.value} adicionado`
         valores.push(num.value)
         list.appendChild(item)
